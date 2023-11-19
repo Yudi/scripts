@@ -42,7 +42,7 @@ lado="esq"
 
 for file in *.mp4
 do
-    mv "$file" "${disciplina[$i]//\//-} - ${frente[$i]//\//-} - ${date[$i]//\//-} - ${conteudo[$i]//\//-} - $lado.mp4"
+    mv "$file" "${disciplina[$i]} - ${frente[$i]} - ${date[$i]} - ${conteudo[$i]//\//-} - $lado.mp4"
 
     if [ $j -eq 0 ]; then
         lado="dir"
