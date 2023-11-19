@@ -12,13 +12,13 @@ tail -n +2 ../input.csv | cut -d ';' -f1 |  while IFS="" read -r line; do date+=
 
 # //\//- replaces "/" with "-"
 disciplina=()
-tail -n +2 ../input.csv | cut -d ';' -f3 |  while IFS="" read -r line; do disciplina+=("$line"//\//-); done
+tail -n +2 ../input.csv | cut -d ';' -f3 |  while IFS="" read -r line; do disciplina+=("$line"); done
 
 frente=()
-tail -n +2 ../input.csv | cut -d ';' -f4 |  while IFS="" read -r line; do frente+=("$line"//\//-); done
+tail -n +2 ../input.csv | cut -d ';' -f4 |  while IFS="" read -r line; do frente+=("$line"); done
 
 conteudo=()
-tail -n +2 ../input.csv | cut -d ';' -f5 |  while IFS="" read -r line; do conteudo+=("$line"//\//-); done
+tail -n +2 ../input.csv | cut -d ';' -f5 |  while IFS="" read -r line; do conteudo+=("$line"); done
 
 files=(*.mp4)
 filecount=${#files[@]}
@@ -42,7 +42,7 @@ lado="esq"
 
 for file in *.mp4
 do
-    mv "$file" "${disciplina[$i]} - ${frente[$i]} - ${date[$i]} - ${conteudo[$i]} - $lado.mp4"
+    mv "$file" "${disciplina[$i]//\//-} - ${frente[$i]//\//-} - ${date[$i]//\//-} - ${conteudo[$i]//\//-} - $lado.mp4"
 
     if [ $j -eq 0 ]; then
         lado="dir"
