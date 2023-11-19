@@ -8,6 +8,10 @@ Renames .mp4 files from Zoom based on the .csv file provided by the school.
 $ ./batch_rename.sh <folder with .mp4 files>
 ```
 
+```bash
+$ python batch_rename.py <data.csv> <folder with .mp4 files>
+```
+
 ## input.csv
 
 ```csv
