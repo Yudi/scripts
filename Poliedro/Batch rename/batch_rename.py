@@ -73,6 +73,9 @@ i = 0
 j = False
 lado = "esq"
 
+if num_files != row_count * 2:
+    raise Exception("Number of files in the directory and number of rows in the CSV file are not equal")
+
 for filename in sorted(glob.glob(f"{absolutedirectory}/[!.]*.mp4")):
     info = data[i]
     os.rename(filename, f"{absolutedirectory}/{info['disciplina']} - {info['frente']} - {info['date']} - {info['conteudo']} - {lado}.mp4") 
