@@ -55,7 +55,7 @@ with open(csvpath, "r") as csvfile:
     for i, line in enumerate(csvreader):
         # If line is empty or has less than 5 columns, throw
         if len(line) < 5:
-            raise Exception(f"Line {i + 1} is empty or has less than 5 columns.")
+            raise Exception(f"Line {i + 1} is empty or has less than 5 columns. Also check delimeter")
 
         tempRow: RowData = {}
 
